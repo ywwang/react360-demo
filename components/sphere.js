@@ -1,7 +1,8 @@
 import React, { PureComponent } from 'react';
-import { asset } from 'react-360';
+import { asset, StyleSheet } from 'react-360';
 import Entity from 'Entity';
 import { subscribe } from '../utils/rotate';
+import { View } from 'react-native';
 
 export default class Sphere extends PureComponent {
   state = {
@@ -15,19 +16,21 @@ export default class Sphere extends PureComponent {
   render() {
     const { rotated } = this.state;
     return (
-      <Entity
-        source={{
-          gltf2: asset('sphere/scene.gltf'),
-          bin: asset('sphere/scene.bin'),
-        }}
-        style={{transform:[
-          {translate: [-10, 0, -10]},
-          { scaleX: 1 },
-          { scaleY: 1 },
-          { scaleZ: 1 },
-          { rotateX: 0 },
-        ]}}
-      />
+      <View style={styles.padding}>
+        <Entity
+          source={{
+            gltf2: asset('sphere/scene.gltf'),
+            bin: asset('sphere/scene.bin'),
+          }}
+          style={{transform:[
+            { translate: [0, 0, 0] },
+            { scaleX: 1 },
+            { scaleY: 1 },
+            { scaleZ: 1 },
+            { rotateX: rotated },
+          ]}}
+        />
+      </View>
     );
   }
   
@@ -35,3 +38,9 @@ export default class Sphere extends PureComponent {
     this.setState(({ rotated }) => ({ rotated: rotated + 1 }));
   }
 }
+
+const styles = StyleSheet.create({
+  padding: {
+      margin: 100,
+  },
+});
