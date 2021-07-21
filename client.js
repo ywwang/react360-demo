@@ -4,8 +4,10 @@
 import {ReactInstance,Surface,Location} from 'react-360-web';
 import { TooltipModule } from "./modules/Tooltip.module";
 
+export let r360;
+
 function init(bundle, parent, options = {}) {
-  const r360 = new ReactInstance(bundle, parent, {
+  r360 = new ReactInstance(bundle, parent, {
     // Add custom options here
     fullScreen: true,
     nativeModules: [new TooltipModule()],

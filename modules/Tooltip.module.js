@@ -14,8 +14,8 @@ export class TooltipModule extends Module {
     this.detachAll ();
 
     const tooltips = [{
-      width: 500,
-      height: 500,
+      width: 80,
+      height: 80,
       yaw: 10.3,
       pitch: 0.1,
       text: 'Chernihiv Regional Youth Center',

@@ -20,8 +20,9 @@ export default class Sphere extends PureComponent {
         <Entity
           source={{
             gltf2: asset('sphere/scene.gltf'),
-            bin: asset('sphere/scene.bin'),
+            //gltf2: asset('porsche/scene.gltf'),
           }}
+          lit={true}
           style={{transform:[
             { translate: [0, 0, 0] },
             { scaleX: 1 },
@@ -35,7 +36,7 @@ export default class Sphere extends PureComponent {
   }
   
   handleRotate = () => {
-    this.setState(({ rotated }) => ({ rotated: rotated + 1 }));
+    this.setState(({ rotated }) => ({ rotated: rotated + 3 }));
   }
 }
 

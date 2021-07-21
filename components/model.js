@@ -14,11 +14,16 @@ export default class Model extends React.Component {
               <Text>Here is model</Text>
             <View>
                 <AmbientLight intensity={5} />
-                <Entity source={{ obj: asset('r2d2.obj'), mtl: asset('r2d2.mtl') }}
+                <Entity source={{ obj: asset('bugatti/bugatti.obj'), mtl: asset('bugatti/bugatti.mtl') }}
                     lit={true}
-                    style={{ transform: [{ rotateY: 10 },{ scaleX: 1 },
-                      { scaleY: 1 },
-                      { scaleZ: 1 },] }}
+                    style={{
+                      transform: [
+                        { rotateY: 1 },
+                        { scaleX: 1 },
+                        { scaleY: 1 },
+                        { scaleZ: 1 },
+                      ],
+                    }}
                 />
             </View>
             <Text>Here is model end</Text>

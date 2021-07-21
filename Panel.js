@@ -7,11 +7,13 @@ import {
     NativeModules,
     asset
 } from 'react-360';
-import Sphere from './components/sphere';
+import { rotate } from './utils/rotate';
 const { AudioModule } = NativeModules;
 
 export default class Panel extends React.Component {
+    
     render() {
+        NativeModules.TooltipModule.setTooltips();
         return (
             <View style={styles.panel}>
                 <View style={styles.greetingBox}>
@@ -22,13 +24,20 @@ export default class Panel extends React.Component {
                         onClick={() => {
                             AudioModule.playOneShot({
                                 source: asset('r2d2.mp3'),
+                                volume: 1
                             });
                         }}>
                         <Text>
-                            Play Message
+                            Play Message 3
                         </Text>
                     </VrButton>
-                    <Sphere />
+                    <VrButton
+                        onClick={() => rotate()}
+                    >
+                        <Text>
+                        Rotate
+                        </Text>
+                    </VrButton>
                 </View>
             </View>
         );
