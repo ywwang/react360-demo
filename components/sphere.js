@@ -20,16 +20,17 @@ export default class Sphere extends PureComponent {
         <Entity
           source={{
             gltf2: asset('sphere/scene.gltf'),
-            //gltf2: asset('porsche/scene.gltf'),
           }}
           lit={true}
-          style={{transform:[
-            { translate: [0, 0, 0] },
-            { scaleX: 1 },
-            { scaleY: 1 },
-            { scaleZ: 1 },
-            { rotateX: rotated },
-          ]}}
+          style={{
+            transform:[
+              { translate: [0, 0, 0] },
+              { scaleX: 1 },
+              { scaleY: 1 },
+              { scaleZ: 1 },
+              { rotateX: rotated },
+            ]
+          }}
         />
       </View>
     );

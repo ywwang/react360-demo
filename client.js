@@ -17,19 +17,19 @@ function init(bundle, parent, options = {}) {
   const location = new Location([-5, -3, -9]);
 
   // Render your app content to the default cylinder surface
-  /*r360.renderToSurface(
+  r360.renderToSurface(
     r360.createRoot('react360Demo', {}),
-    location
-    //r360.getDefaultSurface()
-  );*/
+    r360.getDefaultSurface(),
+    'default' /* 可選項，引用的surface的名稱 */
+  );
 
   // Render your app content to a new flat surface
-  const surface = new Surface(500, 600, Surface.SurfaceShape.Flat);
-  surface.setAngle(0, 0);
-  r360.renderToSurface(
-    r360.createRoot('react360Demo', { }),
-    surface
-  );
+  // const surface = new Surface(600, 400, Surface.SurfaceShape.Flat);
+  // surface.setAngle(0, 0);
+  // r360.renderToSurface(
+  //   r360.createRoot('react360Demo', { }),
+  //   surface
+  // );
 
   const surface2 = new Surface(200, 200, Surface.SurfaceShape.Flat);
   surface2.setAngle(0.60, -0.1);
