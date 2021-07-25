@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react';
 import { asset, StyleSheet } from 'react-360';
 import Entity from 'Entity';
-import { subscribe } from '../utils/rotate';
 import { View } from 'react-native';
 
 export default class Sphere extends PureComponent {
@@ -10,7 +9,7 @@ export default class Sphere extends PureComponent {
   };
 
   componentDidMount() {
-    subscribe(this.handleRotate);
+    setInterval(() => this.handleRotate(), 300);
   }
 
   render() {
@@ -23,26 +22,28 @@ export default class Sphere extends PureComponent {
           }}
           lit={true}
           style={{
-            transform:[
+            transform: [
               { translate: [0, 0, 0] },
               { scaleX: 1 },
               { scaleY: 1 },
               { scaleZ: 1 },
               { rotateX: rotated },
-            ]
+              { rotateY: rotated },
+              { rotateZ: rotated },
+            ],
           }}
         />
       </View>
     );
   }
-  
+
   handleRotate = () => {
-    this.setState(({ rotated }) => ({ rotated: rotated + 3 }));
-  }
+    this.setState(({ rotated }) => ({ rotated: rotated + 2 }));
+  };
 }
 
 const styles = StyleSheet.create({
   padding: {
-      margin: 100,
+    margin: 100,
   },
 });
